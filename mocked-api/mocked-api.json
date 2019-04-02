@@ -1,0 +1,56 @@
+{
+  "projects": [
+    {
+      "id":"B074VGYJWN",
+      "product":{
+        "id":"B074VGYJWN",
+        "imageId":"81Xj9ylgJoL",
+        "title":"Canon TS5120"
+      },
+      "projectStats": {
+        "minRanking":1.0,
+        "avgRanking":1.0,
+        "maxRanking":11.0,
+        "number":1,
+        "weeklyChange":1.0,
+        "monthlyChange":1.0
+      },
+      "keywords": [
+        {"id":3,"keyword":"text3","keywordRankingStats":null},
+        {"id":5,"keyword":"text5","keywordRankingStats":{"today":1,"map":{"7":5}}},
+        {"id":7,"keyword":"text7","keywordRankingStats":{"today":null,"map":{"7":1, "14": 15, "30": 44}}}
+      ]
+    },
+    {
+      "id":"B0763WDSYZ",
+      "product":{
+        "id":"B0763WDSYZ",
+        "imageId":"814gdM7Tx8L",
+        "title":"Canon TS6120"
+      },
+      "projectStats":{
+        "minRanking":1.0,
+        "avgRanking":3.0,
+        "maxRanking":13.0,
+        "number":1,
+        "weeklyChange":-1.3,
+        "monthlyChange":1.0
+      },
+      "keywords": [
+        {"id":1,"keyword":"text1","keywordRankingStats":null},
+        {"id":2,"keyword":"text2","keywordRankingStats":{"today":2,"map":{"7":21, "14": 31}}}
+      ]
+    },
+    {
+      "id": "B07MW6D6PH",
+      "product": {
+        "id": "B07MW6D6PH"
+      },
+      "keywords": [
+        {
+          "keyword": "mi band 3"
+        }
+      ]
+    }
+  ]
+}

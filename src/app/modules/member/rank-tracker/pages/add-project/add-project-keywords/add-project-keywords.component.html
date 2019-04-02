@@ -1,0 +1,48 @@
+<div *ngIf="projectState.getState() | async; let state;">
+<mat-expansion-panel
+          [expanded]="state.currentState === ownStateIndex"
+          (opened)="projectState.setState(ownStateIndex)"
+          [disabled]="!isStateEnabled(ownStateIndex)"
+          hideToggle >
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Keywords
+      </mat-panel-title>
+      <mat-panel-description>
+        <div *ngIf="numberKeywords && 0 < numberKeywords; else defaultDescription">
+          Number of keywords: {{numberKeywords}}
+        </div>
+        <ng-template #defaultDescription >
+          Insert comma separated keyword list
+        </ng-template>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <mat-form-field class="keywords-input" [floatLabel]="'never'">
+            <textarea matInput  placeholder="Keyword1, Keyword2" autocomplete="off"
+                      [formControl]="keywordsFormControl"
+                      [errorStateMatcher]="matcher"
+                      [matTextareaAutosize]="true"
+                      [matAutosizeMaxRows]="20"
+                      [matAutosizeMinRows]="10">
+            </textarea>
+      <mat-hint align="end">
+        <div *ngIf="numberKeywords;">
+          {{numberKeywords}} / {{maxKeywords}}
+        </div>
+      </mat-hint>
+      <mat-error *ngIf="keywordsFormControl.hasError('required')">
+        At least one keyword is <strong>required</strong>
+      </mat-error>
+      <mat-error *ngIf="!keywordsFormControl.hasError('required') && keywordsFormControl.hasError('tooManyKeywords')">
+        You have inserted more than <strong>{{maxKeywords}}</strong> keywords
+      </mat-error>
+    </mat-form-field>
+
+    <mat-action-row>
+      <egrow-cancel-button [projectId]="projectId$ | async"></egrow-cancel-button>
+      <button mat-button color="warn" (click)="prevState()">Previous</button>
+      <button mat-button color="primary" [disabled]="!isStateEnabled(getNextStateIndex())" (click)="nextState()">Add Project</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+</div>

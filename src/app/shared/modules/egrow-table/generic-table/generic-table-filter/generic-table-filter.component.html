@@ -1,0 +1,7 @@
+<div class="table-filter">
+  <i class="material-icons table-filter-search-icon">search</i>
+  <mat-form-field class="table-filter-search" [floatLabel]="'never'" >
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search..."
+           autocomplete="off">
+  </mat-form-field>
+</div>

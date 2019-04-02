@@ -1,0 +1,21 @@
+.table-filter {
+    display: flex;
+    flex-direction: row;
+    -webkit-flex-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.table-filter-search {
+    margin-left: 5px;
+}
+
+.table-filter-search-icon {
+    margin-left: 10px;
+}
+
+.table-filter ::ng-deep .mat-form-field-underline {
+    display: none;
+}

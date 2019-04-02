@@ -1,0 +1,9 @@
+<div class="selected-form">
+    <mat-checkbox (change)="$event ? selection.masterToggle(dataSource) : null"
+                  [checked]="selection.hasValue() && selection.isAllSelected(dataSource)"
+                  [indeterminate]="selection.hasValue() && !selection.isAllSelected(dataSource)">
+    </mat-checkbox>
+    <div class="checked-actions" *ngIf="selection.hasValue()">
+        <button mat-button (click)="delete()"><i class="material-icons">delete</i></button>
+    </div>
+</div>

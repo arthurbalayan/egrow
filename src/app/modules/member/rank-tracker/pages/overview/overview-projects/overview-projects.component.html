@@ -1,0 +1,12 @@
+<div>
+  <app-generic-table [customColumns]="this.customColumns"
+                     [dataObservable]="dataObservable"
+                     [addButtonText]="'Add Project'"
+                     (events)="handleEvent($event)">
+  </app-generic-table>
+</div>
+
+<!-- Here are all column templates defined -->
+<ng-template #titleTemplate let-rowElement="rowElement" let-columnId="columnId">
+  <app-title-column [rowElement]="rowElement" [columnId]="columnId"></app-title-column>
+</ng-template>

@@ -1,0 +1,11 @@
+<div *ngIf="null != project">
+  <div>
+    Id: <span>{{project.id}}</span>
+  </div>
+  <div *ngIf="project.product">
+    Title: <span>{{project.product.title}}</span>
+  </div>
+  <div *ngIf="project.keywords">
+    Num. Keywords: <span>{{project.keywords.length}}</span>
+  </div>
+</div>

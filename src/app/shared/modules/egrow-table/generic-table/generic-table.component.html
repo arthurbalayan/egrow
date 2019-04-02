@@ -1,0 +1,76 @@
+<div class="egrow-table mat-elevation-z8">
+
+  <div class="table-actions">
+
+    <div class="w-100 table-rows">
+      <!-- Filter -->
+      <app-generic-table-filter [dataSource]="dataSource"></app-generic-table-filter>
+
+      <span class="table-actions-filler"></span>
+
+      <!-- Add Button-->
+      <div *ngIf="addButtonText" class="add-button">
+        <a mat-button color="primary" (click)="events.add()" [matTooltip]="addButtonText"><i class="material-icons">add</i></a>
+      </div>
+    </div>
+
+    <!-- Averages Cards -->
+    <div class="w-100">
+      <app-generic-table-average-statistics
+        [data]="dataSource.data"
+        [columns]="customColumns">
+      </app-generic-table-average-statistics>
+    </div>
+
+  </div>
+
+  <table mat-table [dataSource]="dataSource" matSort>
+
+    <!-- Table Header -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+
+    <!-- Checkbox Column -->
+    <ng-container matColumnDef="select">
+      <th mat-header-cell *matHeaderCellDef>
+        <app-generic-table-checkbox-column-header [dataSource]="dataSource"></app-generic-table-checkbox-column-header>
+      </th>
+      <td mat-cell *matCellDef="let row">
+        <app-generic-table-checkbox-column-cell [row]="row"></app-generic-table-checkbox-column-cell>
+      </td>
+    </ng-container>
+
+    <!-- Custom Columns -->
+    <ng-container [matColumnDef]="column.id" *ngFor="let column of customColumns">
+
+      <!-- Sortable Custom Columns -->
+      <ng-container *ngIf="column.sortable;">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> {{column.title}} </th>
+      </ng-container>
+
+      <!-- Not-Sortable Custom Columns -->
+      <ng-container *ngIf="!column.sortable;">
+        <th mat-header-cell *matHeaderCellDef> {{column.title}} </th>
+      </ng-container>
+
+      <!-- Custom Columns Content -->
+      <td mat-cell *matCellDef="let rowElement">
+        <ng-template
+                [ngTemplateOutletContext]="{rowElement:rowElement, columnId:column.id}"
+                [ngTemplateOutlet]="column.template">
+        </ng-template>
+      </td>
+
+    </ng-container>
+
+    <!-- Rows -->
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+  </table>
+
+  <!-- Pagination -->
+  <mat-paginator [pageSizeOptions]="[10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+</div>
+
+<ng-template #genericTableColumnTemplate let-rowElement="rowElement" let-columnId="columnId">
+  <app-generic-table-column [rowElement]="rowElement" [columnId]="columnId"></app-generic-table-column>
+</ng-template>

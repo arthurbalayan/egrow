@@ -1,0 +1,23 @@
+<div *ngIf="projectState.getState() | async; let state;">
+  <mat-expansion-panel
+          [expanded]="state.currentState === ownStateIndex"
+          (opened)="projectState.setState(ownStateIndex)"
+          [disabled]="!isStateEnabled(ownStateIndex)"
+          hideToggle >
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Summary
+      </mat-panel-title>
+      <mat-panel-description>
+        Check all entered information of the project
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <app-generic-table [dataObservable]="dataObservable" [customColumns]="customColumns" (events)="handleEvent($event)"></app-generic-table>
+
+    <mat-action-row>
+      <button mat-button color="warn" (click)="prevState()">Previous</button>
+      <button mat-button color="primary" (click)="submitState()">Add Project</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+</div>

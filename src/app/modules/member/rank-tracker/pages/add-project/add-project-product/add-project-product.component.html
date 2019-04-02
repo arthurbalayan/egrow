@@ -1,0 +1,23 @@
+<div *ngIf="projectState.getState() | async; let state;">
+  <mat-expansion-panel
+          [expanded]="state.currentState === ownStateIndex"
+          (opened)="projectState.setState(ownStateIndex)"
+          hideToggle >
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Product
+      </mat-panel-title>
+      <mat-panel-description>
+        {{projectId || 'Insert ASIN'}}
+      </mat-panel-description>
+
+    </mat-expansion-panel-header>
+
+    <app-asin-input [asin]="projectId" (asinProvider)="setProjectId($event)"></app-asin-input>
+  
+    <mat-action-row>
+      <egrow-cancel-button></egrow-cancel-button>
+      <button mat-button color="primary" [disabled]="!isStateEnabled(getNextStateIndex())" (click)="nextState()">Next</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+</div>

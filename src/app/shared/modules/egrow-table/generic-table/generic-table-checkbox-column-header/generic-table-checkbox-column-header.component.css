@@ -1,0 +1,16 @@
+/* Checkbox css settings */
+.selected-form {
+    display: flex;
+    flex-direction: row;
+}
+
+/* Icon css settings */
+i.material-icons {
+    font-size: 18px;
+    margin: 0 5px;
+}
+
+.checked-actions {
+    height: 16px;
+    margin-left: 5px;
+}

@@ -1,0 +1,3 @@
+{
+  "/api/v3/rank-tracker/*": "/$1"
+}

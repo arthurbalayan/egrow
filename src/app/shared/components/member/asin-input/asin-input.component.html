@@ -1,0 +1,16 @@
+<form class="example-form">
+  <mat-form-field class="example-full-width" [floatLabel]="'never'">
+    <input matInput AsinInputValidator autocomplete="off" [value]="asinFormControl.value"
+           placeholder="Add product: B06ZXQV6P8 or product url" [formControl]="asinFormControl"
+           [errorStateMatcher]="matcher">
+    <mat-hint *ngIf="asinFormControl.valid">
+      ASIN is valid
+    </mat-hint>
+    <mat-error *ngIf="asinFormControl.hasError('required')">
+      ASIN or url is <strong>required</strong>
+    </mat-error>
+    <mat-error *ngIf="!asinFormControl.hasError('required') && asinFormControl.hasError('asinInvalid')">
+      ASIN or url is <strong>invalid</strong>
+    </mat-error>
+  </mat-form-field>
+</form>

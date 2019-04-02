@@ -1,0 +1,25 @@
+<div class="p-10" fxLayout="row wrap" fxLayoutAlign="space-between" fxLayoutGap="5px">
+
+  <mat-card *ngFor="let item of averages" matTooltip="Avg. Price is calculated based on displayed products in the table below. Change number of products on this page to see Avg. numbers for top 10, 25, 50 or 100 products.">
+    <mat-card-header>
+      <mat-card-title>
+        AVG.{{item.name}}
+      </mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <div fxLayout fxLayoutAlign="center">
+        <h2 class="big-sign">{{item.avg | number:'1.0-1'}}</h2>
+      </div>
+
+      <div fxLayout="row" fxLayoutAlign="space-between">
+        <div>
+          min:{{item.min}}
+        </div>
+        <div>
+          max:{{item.max}}
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

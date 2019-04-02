@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+html, body {
+    /* make sure the body does not have a margin */
+    margin: 0;
+    /* this forces the body tag to fill the height of the window */
+    height: 100%;
+}
+
+/* This is necessary for the footer and header */
+.toolbar-filler {
+    flex: 1 1 auto
+}
+
+.p-10 {
+  padding: 10px;
+}

@@ -1,0 +1,57 @@
+.egrow-table {
+    width: 100%;
+    overflow: auto;
+}
+
+.mat-header-cell {
+    padding: 5px;
+}
+
+.mat-cell {
+    padding: 0 5px;
+}
+
+table {
+    width: 100%;
+}
+
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+
+td, th {
+    width: 25%;
+}
+
+.mat-row:hover {
+    background-color: #f3f7f9;
+}
+
+.table-actions {
+    display: flex;
+    flex-direction: column;
+    -webkit-flex-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.table-actions-filler {
+    flex: 1 1 auto
+}
+
+.table-rows{
+  display: flex;
+  flex-direction: row;
+  -webkit-flex-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.w-100{
+  width: 100%;
+}

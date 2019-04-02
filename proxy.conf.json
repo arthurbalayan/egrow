@@ -1,0 +1,8 @@
+{
+  "/api/v3" : {
+    "target": "https://deploy-app.egrow.io/api/v3/",
+    "logLevel": "debug",
+    "secure": "false",
+    "changeOrigin": true
+  }
+}

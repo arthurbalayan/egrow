@@ -1,0 +1,17 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="this.toggleNavBar.emit()">
+            <i class="material-icons md-18">menu</i>
+        </button>
+        <h1 class="component-title">
+            <a class="title-link">{{navigationTitle | async}}</a>
+        </h1>
+        <span class="toolbar-filler"></span>
+        <button type="button" aria-label="Logout" mat-icon-button matTooltip="Logout" (click)="authService.logout()">
+            <i class="material-icons">exit_to_app</i>
+        </button>
+        <button type="button" aria-label="Profile" mat-icon-button matTooltip="Profile">
+            <i class="material-icons">account_circle</i>
+        </button>
+    </mat-toolbar-row>
+</mat-toolbar>
